@@ -1,4 +1,5 @@
 import React from 'react'
+import NextImage from "next/image"
 import {
   Flex,
   Heading,
@@ -16,6 +17,8 @@ import { Header } from '@/components/Header'
 import Post from '@/interfaces/post'
 import { getAllTransmissions } from '@/lib/api'
 import { formatDate } from '@/lib/date'
+import heroFront from "../../public/assets/om_substrates-album-new.png"
+import heroBack from "../../public/assets/albumBackBlank.png"
 
 type Props = {
   transmissions: Post[]
@@ -34,10 +37,17 @@ export default function Home({ transmissions }: Props) {
         <Header />
         <Flex direction="row" alignItems="start" justifyContent="space-between" w="100%" h="100%" flexWrap="wrap">
           <Flex direction="column" alignItems="start" justifyContent="space-between" w={["100%", null, "50%"]}>
-            <Image src="/assets/om_substrates-album-new.png" h="100%" w="100%" alt="The Open Machine" />
+            <NextImage priority src={heroFront} alt="The Open Machine" sizes="(max-width: 768px) 100vw, 50vw" />
           </Flex>
           <Flex direction="column" alignItems="start" justifyContent="space-between" position="relative" w={["100%", null, "50%"]} h="100%" display={['none', null, 'flex']}>
-            <Image src="/assets/albumBack.png" h="100%" w="100%" alt="The Open Machine" />
+            <NextImage priority src={heroBack} alt="The Open Machine" sizes="50vw" />
+            <Box position="absolute" inset="0" ps="5.3vw" pt="6vw" pe="6.2vw" letterSpacing="0.005em">
+              <Text fontFamily="sans-serif" fontSize="1.45vw" mb="1em" lineHeight="1.2">
+                <Text as="strong" fontWeight="bold">The Open Machine</Text> is a cultural research studio that invokes unlikely alliances across technology and culture to advance ethical, open forms of coordination. We conduct research to produce media, events, and frameworks that capture and project the patterns that emerge.
+              </Text>
+              <Text fontFamily="sans-serif" fontSize="1.16vw" lineHeight="shorter" mb="1em">Our work draws on the concept of <Text as="strong" fontWeight="bold">immanence</Text> -- the inherent creative capacity of fields or relational systems to generate structure and novelty without central command - in order to understand and navigate the emerging technology landscape. We study immanent social technologies (open-source practices, distributed coordination, and consent-based collaboration) alongside digital technologies, seeking out technical strategies in both that harmonize and expand rather than enclose and capture the creative capacities of nature.</Text>
+              <Text fontFamily="sans-serif" fontSize="1.16vw" lineHeight="shorter">As a cultural research studio, our goal is to strategically intervene in tech culture in order to incite new networks and coalitions that share immanent values. This means instigating dialogue and cross-pollination between a diverse range of technologists, theorists, artists - from permaculturalists to programmers to community organizers - in order to broaden our definition of technology and rediscover an integrated sense of its most ethical form.</Text>
+            </Box>
           </Flex>
         </Flex>
 
