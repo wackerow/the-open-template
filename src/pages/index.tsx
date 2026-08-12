@@ -39,7 +39,7 @@ export default function Home({ transmissions }: Props) {
           <Flex direction="column" alignItems="start" justifyContent="space-between" w={["100%", null, "50%"]}>
             <NextImage priority src={heroFront} alt="The Open Machine" sizes="(max-width: 768px) 100vw, 50vw" />
           </Flex>
-          <Flex direction="column" alignItems="start" justifyContent="space-between" position="relative" w={["100%", null, "50%"]} h="100%" display={['none', null, 'flex']}>
+          <Flex direction="column" alignItems="start" justifyContent="space-between" position="relative" w={["100%", null, "50%"]} h="100%" display={['none', null, 'flex']} color="white">
             <NextImage priority src={heroBack} alt="The Open Machine" sizes="50vw" />
             <Box position="absolute" inset="0" ps="5.3vw" pt="6vw" pe="6.2vw" letterSpacing="0.005em">
               <Text fontFamily="sans-serif" fontSize="1.45vw" mb="1em" lineHeight="1.2">
